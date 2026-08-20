@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>UniLostFound - Login</title>
@@ -13,7 +14,6 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #f5f7fb;
             color: #1e293b;
-            line-height: 1.6;
         }
 
         a {
@@ -28,15 +28,14 @@
         .auth-page {
             min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            background: #f5f7fb;
+            align-items: center;
             padding: 30px;
         }
 
         .auth-container {
             width: 100%;
-            max-width: 420px;
+            max-width: 450px;
         }
 
         .auth-logo {
@@ -48,17 +47,17 @@
         }
 
         .auth-card {
-            background: #ffffff;
+            background: white;
             border: 1px solid #e5e7eb;
             border-radius: 12px;
-            padding: 32px;
+            padding: 30px;
         }
 
         .auth-card h1 {
             text-align: center;
             color: #0f172a;
             font-size: 24px;
-            margin-bottom: 7px;
+            margin-bottom: 5px;
         }
 
         .auth-card p {
@@ -68,57 +67,67 @@
             margin-bottom: 25px;
         }
 
-        .form-group {
-            margin-bottom: 18px;
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
         }
 
-        .form-group label {
-            display: block;
+        legend {
+            color: #2563eb;
+            font-weight: bold;
+            padding: 0 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px 5px;
+        }
+
+        label {
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 7px;
             color: #334155;
         }
 
-        .form-group input {
+        input[type="email"],
+        input[type="password"] {
             width: 100%;
-            padding: 11px 13px;
+            padding: 10px 12px;
             border: 1px solid #cbd5e1;
-            border-radius: 7px;
+            border-radius: 6px;
             outline: none;
-            background: #ffffff;
-            color: #1e293b;
         }
 
-        .form-group input:focus {
+        input[type="email"]:focus,
+        input[type="password"]:focus {
             border-color: #2563eb;
             box-shadow: 0 0 0 3px #dbeafe;
         }
 
-        .remember-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+        .remember {
             font-size: 13px;
+            font-weight: normal;
         }
 
-        .remember-row label {
-            color: #475569;
-        }
-
-        .remember-row input {
+        .remember input {
             margin-right: 5px;
+        }
+
+        .forgot {
+            text-align: right;
         }
 
         .btn {
             width: 100%;
+            padding: 11px;
             border: none;
-            padding: 11px 18px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
             cursor: pointer;
         }
 
@@ -144,81 +153,128 @@
             }
 
             .auth-card {
-                padding: 25px;
+                padding: 20px;
+            }
+
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            .forgot {
+                text-align: left;
+                margin-top: 5px;
             }
         }
     </style>
 </head>
 
-<body class="auth-page">
+<body>
 
-    <div class="auth-container">
+    <div class="auth-page">
 
-        <div class="auth-logo">
-            UniLostFound
-        </div>
+        <div class="auth-container">
 
-        <div class="auth-card">
+            <div class="auth-logo">
+                UniLostFound
+            </div>
 
-            <h1>Sign In</h1>
+            <div class="auth-card">
 
-            <p>
-                Sign in to access your UniLostFound account.
-            </p>
+                <h1>Sign In</h1>
 
-            <form action="#" method="post">
+                <p>
+                    Sign in to access your UniLostFound account.
+                </p>
 
-                <div class="form-group">
+                <form action="#" method="post">
 
-                    <label>Email</label>
+                    <fieldset>
 
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        required
-                    >
+                        <legend>Login Information</legend>
+
+                        <table>
+
+                            <tr>
+                                <td>
+                                    <label for="email">Email</label>
+                                </td>
+
+                                <td>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                        required
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label for="password">Password</label>
+                                </td>
+
+                                <td>
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Enter your password"
+                                        required
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+
+                                    <label class="remember">
+                                        <input
+                                            type="checkbox"
+                                            name="remember"
+                                        >
+                                        Remember Me
+                                    </label>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="forgot">
+
+                                    <a href="forgot-password.html">
+                                        Forgot Password?
+                                    </a>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+
+                                    <input
+                                        type="submit"
+                                        value="Sign In"
+                                        class="btn btn-primary"
+                                    >
+
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </fieldset>
+
+                </form>
+
+                <div class="auth-footer">
+
+                    Don't have an account?
+                    <a href="register.html">Register</a>
 
                 </div>
-
-                <div class="form-group">
-
-                    <label>Password</label>
-
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Enter your password"
-                        required
-                    >
-
-                </div>
-
-                <div class="remember-row">
-
-                    <label>
-                        <input type="checkbox" name="remember">
-                        Remember Me
-                    </label>
-
-                    <a href="forgot-password.html">
-                        Forgot Password?
-                    </a>
-
-                </div>
-
-                <input
-                    type="submit"
-                    value="Sign In"
-                    class="btn btn-primary"
-                >
-
-            </form>
-
-            <div class="auth-footer">
-
-                Don't have an account?
-                <a href="register.html">Register</a>
 
             </div>
 
