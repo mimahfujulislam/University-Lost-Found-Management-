@@ -1,0 +1,389 @@
+<html>
+<head>
+    <title>UniLostFound - My Claims</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2563eb;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+        }
+
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 0;
+        }
+
+        .navbar-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .page-header {
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            color: #0f172a;
+            font-size: 28px;
+        }
+
+        .page-header p {
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            outline: none;
+            background: #ffffff;
+            color: #1e293b;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px #dbeafe;
+        }
+
+        .btn {
+            border: none;
+            padding: 11px 18px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #e8eefc;
+            color: #2563eb;
+        }
+
+        .btn-secondary:hover {
+            background: #dbe5fb;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+        }
+
+        .data-table th {
+            background: #f8fafc;
+            color: #334155;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px;
+            border: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        .data-table td {
+            padding: 13px;
+            border: 1px solid #e5e7eb;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fff7ed;
+            color: #c2410c;
+        }
+
+        .status-approved {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .status-rejected {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media (max-width: 600px) {
+            .navbar-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                width: 92%;
+                margin: 25px auto;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="navbar-content">
+
+            <div class="logo">
+                UniLostFound
+            </div>
+
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="../profile.html">My Profile</a>
+                <a href="../login.html">Logout</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <div class="page-header">
+
+            <h1>My Claims</h1>
+
+            <p>
+                Submit and track your claims for lost and found items.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Submit a Claim</h2>
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+
+                    <label>Item ID</label>
+
+                    <input
+                        type="text"
+                        name="item_id"
+                        placeholder="Enter item ID"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Claim Reason</label>
+
+                    <textarea
+                        name="claim_reason"
+                        rows="5"
+                        placeholder="Explain why this item belongs to you"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <input
+                        type="submit"
+                        value="Submit Claim"
+                        class="btn btn-primary"
+                    >
+
+                    <input
+                        type="reset"
+                        value="Clear"
+                        class="btn btn-secondary"
+                    >
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h2>My Claims</h2>
+
+            <div class="table-container">
+
+                <table class="data-table">
+
+                    <thead>
+                        <tr>
+                            <th>Claim ID</th>
+                            <th>Item ID</th>
+                            <th>Claim Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="4">
+                                No claims submitted yet.
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <a href="dashboard.html" class="back-link">
+            Back to Dashboard
+        </a>
+
+    </main>
+
+    <footer class="footer">
+        &copy; 2026 UniLostFound - University Lost & Found Management System
+    </footer>
+
+</body>
+</html>
