@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>UniLostFound - My Profile</title>
@@ -89,56 +90,60 @@
             margin-bottom: 25px;
         }
 
-        .card h2 {
-            color: #0f172a;
-            margin-bottom: 20px;
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 20px;
         }
 
-        .form-group {
-            margin-bottom: 18px;
+        legend {
+            color: #2563eb;
+            font-weight: bold;
+            padding: 0 8px;
         }
 
-        .form-group label {
-            display: block;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px 5px;
+        }
+
+        label {
             font-size: 14px;
             font-weight: 600;
             color: #334155;
-            margin-bottom: 7px;
         }
 
-        .form-group input {
+        input[type="text"],
+        input[type="email"] {
             width: 100%;
-            padding: 11px 13px;
+            padding: 10px 12px;
             border: 1px solid #cbd5e1;
-            border-radius: 7px;
+            border-radius: 6px;
             outline: none;
             background: #ffffff;
             color: #1e293b;
         }
 
-        .form-group input:focus {
+        input[type="text"]:focus,
+        input[type="email"]:focus {
             border-color: #2563eb;
             box-shadow: 0 0 0 3px #dbeafe;
         }
 
-        .form-group input[readonly] {
+        input[readonly] {
             background: #f8fafc;
             color: #64748b;
         }
 
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 22px;
-        }
-
         .btn {
-            border: none;
             padding: 11px 18px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
             cursor: pointer;
         }
 
@@ -163,10 +168,10 @@
         .security-link {
             display: block;
             padding: 12px 15px;
-            margin-bottom: 10px;
             background: #f8fafc;
             border: 1px solid #e5e7eb;
             border-radius: 7px;
+            margin-top: 10px;
         }
 
         .security-link:hover {
@@ -175,7 +180,6 @@
 
         .back-link {
             display: inline-block;
-            margin-top: 0;
             font-size: 14px;
         }
 
@@ -205,15 +209,17 @@
             }
 
             .card {
-                padding: 22px;
+                padding: 20px;
             }
 
-            .form-actions {
-                flex-direction: column;
+            td {
+                display: block;
+                width: 100%;
             }
 
             .btn {
                 width: 100%;
+                margin-bottom: 8px;
             }
         }
     </style>
@@ -253,77 +259,107 @@
 
         <div class="card">
 
-            <h2>Profile Information</h2>
-
             <form action="#" method="post">
 
-                <div class="form-group">
+                <fieldset>
 
-                    <label>Full Name</label>
+                    <legend>Profile Information</legend>
 
-                    <input
-                        type="text"
-                        name="fullname"
-                        placeholder="Full Name"
-                        required
-                    >
+                    <table>
 
-                </div>
+                        <tr>
+                            <td>
+                                <label for="fullname">
+                                    Full Name
+                                </label>
+                            </td>
 
-                <div class="form-group">
+                            <td>
+                                <input
+                                    type="text"
+                                    id="fullname"
+                                    name="fullname"
+                                    placeholder="Full Name"
+                                    required
+                                >
+                            </td>
+                        </tr>
 
-                    <label>Student ID</label>
+                        <tr>
+                            <td>
+                                <label for="student_id">
+                                    Student ID
+                                </label>
+                            </td>
 
-                    <input
-                        type="text"
-                        name="student_id"
-                        placeholder="Student ID"
-                        readonly
-                    >
+                            <td>
+                                <input
+                                    type="text"
+                                    id="student_id"
+                                    name="student_id"
+                                    placeholder="Student ID"
+                                    readonly
+                                >
+                            </td>
+                        </tr>
 
-                </div>
+                        <tr>
+                            <td>
+                                <label for="email">
+                                    Email
+                                </label>
+                            </td>
 
-                <div class="form-group">
+                            <td>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    required
+                                >
+                            </td>
+                        </tr>
 
-                    <label>Email</label>
+                        <tr>
+                            <td>
+                                <label for="role">
+                                    Role
+                                </label>
+                            </td>
 
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                    >
+                            <td>
+                                <input
+                                    type="text"
+                                    id="role"
+                                    name="role"
+                                    value="Student"
+                                    readonly
+                                >
+                            </td>
+                        </tr>
 
-                </div>
+                        <tr>
+                            <td></td>
 
-                <div class="form-group">
+                            <td>
+                                <input
+                                    type="submit"
+                                    value="Update Profile"
+                                    class="btn btn-primary"
+                                >
 
-                    <label>Role</label>
+                                <input
+                                    type="reset"
+                                    value="Reset"
+                                    class="btn btn-secondary"
+                                >
+                            </td>
+                        </tr>
 
-                    <input
-                        type="text"
-                        name="role"
-                        value="Student"
-                        readonly
-                    >
+                    </table>
 
-                </div>
-
-                <div class="form-actions">
-
-                    <input
-                        type="submit"
-                        value="Update Profile"
-                        class="btn btn-primary"
-                    >
-
-                    <input
-                        type="reset"
-                        value="Reset"
-                        class="btn btn-secondary"
-                    >
-
-                </div>
+                </fieldset>
 
             </form>
 
@@ -331,15 +367,18 @@
 
         <div class="card">
 
-            <h2>Account Security</h2>
+            <fieldset>
 
-            <a href="change-password.html" class="security-link">
-                Change Password
-            </a>
+                <legend>Account Security</legend>
 
-            <a href="forgot-password.html" class="security-link">
-                Reset Password
-            </a>
+                <a
+                    href="change-password.html"
+                    class="security-link"
+                >
+                    Change Password
+                </a>
+
+            </fieldset>
 
         </div>
 
